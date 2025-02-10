@@ -6,12 +6,13 @@ import {
   Content,
   DeepStructure,
 } from "./styles/StyledComponents";
-import { MessageContextProvider } from "./context/MessageContext";
+import { Provider } from "react-redux";
+import store from "./config/configStore";
 
 // prop drilling 브랜치
 function App() {
   return (
-    <MessageContextProvider>
+    <Provider store={store}>
       <AppContainer>
         <h2>[내배캠] 스탠다드반 프로젝트 - Prop Drilling 예제</h2>
         <Content>
@@ -21,7 +22,7 @@ function App() {
           </DeepStructure>
         </Content>
       </AppContainer>
-    </MessageContextProvider>
+    </Provider>
   );
 }
 
